@@ -1,4 +1,4 @@
-package com.santos.teste.com.santos.teste.rosources;
+package com.santos.teste.resourses;
 
 import com.santos.teste.entities.User;
 import org.springframework.http.ResponseEntity;
