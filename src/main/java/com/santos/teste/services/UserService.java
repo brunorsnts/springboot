@@ -2,6 +2,7 @@ package com.santos.teste.services;
 
 import com.santos.teste.entities.User;
 import com.santos.teste.repositories.UserRepository;
+import com.santos.teste.services.exceptions.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,7 +21,7 @@ public class UserService {
 
     public User findById(Long id) {
         Optional<User> obj = repository.findById(id);
-        return obj.get();
+        return obj.orElseThrow(() -> new ResourceNotFoundException(id));
     }
 
     public User insert(User obj) {
